@@ -948,3 +948,21 @@ function filterToEmails(userList) {
   });
   return emailList;
 }
+
+// Reformat Emails
+console.log(reformatEmailAddress(users[0]));
+
+console.log(reformatEmailAddresses(users));
+
+// iterera alla email adresser
+function reformatEmailAddresses(userList) {
+  userList.forEach((user) => {
+    user.email = reformatEmailAddress(user);
+  });
+  return userList;
+}
+
+function reformatEmailAddress(person) {
+  let reformattedEmail = `${person.name.last}.${person.name.first}@evilcorp,${person.nat}`;
+  return reformattedEmail.toLowerCase();
+}
