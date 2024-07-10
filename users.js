@@ -966,3 +966,16 @@ function reformatEmailAddress(person) {
   let reformattedEmail = `${person.name.last}.${person.name.first}@evilcorp,${person.nat}`;
   return reformattedEmail.toLowerCase();
 }
+
+// Alternative solution
+/* console.log(reformatEmails(users));
+
+function reformatEmails(userList) {
+  userList.forEach((user) => {
+    let first = user.email.split("@")[0];
+    let names = first.split(".");
+    user.email = `${names[1]}.${names[0]}@evilcorp.${user.nat}`.toLowerCase();
+  });
+
+  return userList;
+} */
