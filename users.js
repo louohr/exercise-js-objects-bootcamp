@@ -931,7 +931,21 @@ function filterByCountry(userList, countryCode) {
 }
 
 // listEmails
+
+// solution 1
 function getUsersEmail(users) {
+  let emails = [];
+  for (let i = 0; i < users.length; i++) {
+    emails.push(users[i].email);
+  }
+  return emails;
+}
+
+const email = getUsersEmail(users);
+console.log(email);
+
+// map solution
+/* function getUsersEmail(users) {
   return users.map((user) => user.email);
 }
 
@@ -947,7 +961,7 @@ function filterToEmails(userList) {
     emailList.push(user.email);
   });
   return emailList;
-}
+} */
 
 // Reformat Emails
 console.log(reformatEmailAddress(users[0]));
